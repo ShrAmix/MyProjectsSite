@@ -1,0 +1,39 @@
+{
+    "heroTitle": "My Projects",
+    "heroDescription": "Exciting game projects made with Unity. Check them out below!",
+    "homeLink": "About me",
+    "projectsLink": "Projects",
+    "contactLink": "Contacts/Links",
+    "buttonText": "Learn More",
+    "project1Title": "SpaceRog",
+    "project1Description": "A simple survival game about saving humanity.",
+    "project2Title": "Interpressure",
+    "project2Description": "A city-building simulator in an unstable bubble..",
+
+    "project3Title": "Tyman",
+    "project4Title": "UkraineGameDev",
+    "project5Title": "UkraineGameDev",
+    "project6Title": "UkraineGameDev",
+    "project7Title": "UkraineGameDev",
+
+    "project3Description": "A fantastic shooter in an open world.",
+    "project4Description": "A website about Ukrainian AAA projects.",
+    "project5Description": "A website about Ukrainian AAA projects.",
+    "project6Description": "A website about Ukrainian AAA projects.",
+    "project7Description": "A website about Ukrainian AAA projects.",
+    
+    "contactHeading": "Contacts",
+    "phoneLabel": "Phone:",
+    "emailLabel": "Email:",
+    "telegramLabel": "Telegram:",
+    "githubLabel": "GitHub",
+    "gitlabLabel": "GitLab",
+    "aboutMe1": "My name is Dmytro Chekaliuk, and I am a programmer with experience in game, website, and application development. My main specialization is Unity development and programming in C#, and I also work with Python, HTML, CSS, and JavaScript.",
+    "aboutMe2": "I started programming in Unity in June 2022, and since then, I have created several interesting games. In October 2023, I also began working with Python, and in September 2024, I started programming websites and applications using HTML, CSS, and JavaScript. This allows me to work on both game projects and web development, which broadens my skills and opportunities.",
+    "aboutMe3": "Currently, I am studying for a Bachelor's degree in Software Engineering at Vinnytsia National Technical University. My goal is to become a highly skilled programmer and game development specialist while continuously improving my abilities in creating multiplayer games in Unity.",
+    "aboutMe4": "One of the most exciting moments in my career was participating in a Game Jam at the beginning of 2025. I joined a team of 10 people and became the team leader. My role involved managing the game's development, being the lead programmer, and also serving as a Game Designer and consultant for other team members on coding solutions.",
+    "aboutMe5": "Programming gives me great satisfaction. I aim to create not only technical solutions but also mechanics that are interesting and emotionally enriching. It is important for me that the code is not only effective but also clear, engaging, and enjoyable for users.",
+    "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books.",
+    "tumanS":"A voice assistant with a wide variety of functions for automating processes."
+}
+  
