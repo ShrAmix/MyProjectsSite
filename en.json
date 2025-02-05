@@ -12,15 +12,15 @@
 
     "project3Title": "Tyman",
     "project4Title": "UkraineGameDev",
-    "project5Title": "UkraineGameDev",
-    "project6Title": "UkraineGameDev",
-    "project7Title": "UkraineGameDev",
+    "project5Title": "Doodle Racing",
+    "project6Title": "Ads-Slayer",
+    "project7Title": "Procedural-generation",
 
-    "project3Description": "A fantastic shooter in an open world.",
+    "project3Description": "A voice assistant with a wide variety of functions for automating processes.",
     "project4Description": "A website about Ukrainian AAA projects.",
-    "project5Description": "A website about Ukrainian AAA projects.",
-    "project6Description": "A website about Ukrainian AAA projects.",
-    "project7Description": "A website about Ukrainian AAA projects.",
+    "project5Description": "Racing, where you have to draw a trajectory before the race and see what happens.",
+    "project6Description": "Search for the spell, collect the combination, and exterminate all advertising from this world.",
+    "project7Description": "A project for testing procedural generation.",
     
     "contactHeading": "Contacts",
     "phoneLabel": "Phone:",
@@ -33,7 +33,6 @@
     "aboutMe3": "Currently, I am studying for a Bachelor's degree in Software Engineering at Vinnytsia National Technical University. My goal is to become a highly skilled programmer and game development specialist while continuously improving my abilities in creating multiplayer games in Unity.",
     "aboutMe4": "One of the most exciting moments in my career was participating in a Game Jam at the beginning of 2025. I joined a team of 10 people and became the team leader. My role involved managing the game's development, being the lead programmer, and also serving as a Game Designer and consultant for other team members on coding solutions.",
     "aboutMe5": "Programming gives me great satisfaction. I aim to create not only technical solutions but also mechanics that are interesting and emotionally enriching. It is important for me that the code is not only effective but also clear, engaging, and enjoyable for users.",
-    "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books.",
-    "tumanS":"A voice assistant with a wide variety of functions for automating processes."
+    "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books."
 }
   
