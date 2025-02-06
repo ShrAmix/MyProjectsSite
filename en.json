@@ -5,7 +5,7 @@
     "projectsLink": "Projects",
     "contactLink": "Contacts/Links",
     "buttonText": "Learn More",
-    "project1Title": "SpaceRog",
+    "project1Title": "Space Rog",
     "project1Description": "A simple survival game about saving humanity.",
     "project2Title": "Interpressure",
     "project2Description": "A city-building simulator in an unstable bubble..",
@@ -33,6 +33,9 @@
     "aboutMe3": "Currently, I am studying for a Bachelor's degree in Software Engineering at Vinnytsia National Technical University. My goal is to become a highly skilled programmer and game development specialist while continuously improving my abilities in creating multiplayer games in Unity.",
     "aboutMe4": "One of the most exciting moments in my career was participating in a Game Jam at the beginning of 2025. I joined a team of 10 people and became the team leader. My role involved managing the game's development, being the lead programmer, and also serving as a Game Designer and consultant for other team members on coding solutions.",
     "aboutMe5": "Programming gives me great satisfaction. I aim to create not only technical solutions but also mechanics that are interesting and emotionally enriching. It is important for me that the code is not only effective but also clear, engaging, and enjoyable for users.",
-    "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books."
+    "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books.",
+    
+    "g1text":"For many years, humanity has been sending signals into space, hoping to find other life forms. And he succeeded, but unfortunately, the aliens were not in the mood for friendly relations. Take the role of the first pilot of Space Rog and help the planet not to die out."
+    
 }
   

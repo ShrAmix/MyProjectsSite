@@ -65,3 +65,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+document.querySelectorAll('.game-image').forEach(image => {
+  image.addEventListener('click', (e) => {
+      const clickedImage = e.target;
+
+      // Якщо зображення вже розгорнуте, повертаємо його до початкового розміру
+      if (clickedImage.classList.contains('expanded')) {
+          clickedImage.classList.remove('expanded');
+          clickedImage.style.transform = 'scale(1)';  // Повертаємо до початкового стану
+      } else {
+          // Якщо зображення не розгорнуте, додаємо клас для розгортання
+          clickedImage.classList.add('expanded');
+          clickedImage.style.transform = 'scale(1.9)';  // Збільшуємо зображення
+      }
+  });
+
+  // Змінюємо розмір зображення за допомогою колеса миші
+  image.addEventListener('wheel', (e) => {
+      if (image.classList.contains('expanded')) {
+          const scale = e.deltaY > 0 ? 0.9 : 1.1;  // Якщо колесо прокручується вниз - зменшуємо, вгору - збільшуємо
+          const currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
+          const newScale = currentScale * scale;
+          image.style.transform = `scale(${newScale})`;
+      }
+  });
+});
