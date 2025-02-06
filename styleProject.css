@@ -150,35 +150,27 @@
         height: 120px;
     }
 }
-/* Ховає модальне вікно за замовчуванням */
-/* Модальне вікно (за замовчуванням приховане) */
+/* Стилі для модального вікна */
 .modal {
-    display: none; 
+    display: none;  /* Спочатку модальне вікно приховане */
     position: fixed;
-    z-index: 1000;
+    z-index: 1; /* Перекриває весь контент */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Прозорий чорний фон */
+    overflow: auto; /* У разі необхідності скролінг */
 }
 
-/* Стилі для зображення */
+/* Стилі для контенту модального вікна (зображення) */
 .modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+    margin: auto;
+    display: block;
+    width: 80%; /* Встановлюємо ширину зображення */
+    max-width: 90%;  /* Максимальна ширина зображення — 90% від екрану */
+    max-height: 90%; /* Максимальна висота зображення — 90% від екрану */
+    object-fit: contain; /* Масштабування зображення, щоб воно не виходило за межі */
+    margin-top: 20px;
 }
 
-/* Кнопка закриття */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-}

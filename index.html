@@ -2,7 +2,8 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="autoplay=(), encrypted-media=()">
+
     <title>DmitroDev</title>
     <!-- Підключення основного стилю -->
 <link rel="stylesheet" href="style.css">
@@ -61,7 +62,7 @@
 
         <!-- Секція з проєктами -->
         <section id="projects" class="projects">
-            <a href="#game-overview-1" class="project-card">
+            <a href="#SpaceRog" class="project-card">
                 <div class="project-image" style="background-image: url('Images/SpaceRog/SpaceRog.png');"></div>
                 <div class="project-content">
                     <h2 class="project-title" data-key="project1Title">SpaceRog</h2>
@@ -73,7 +74,7 @@
                 </div>
             </a>
             
-            <a href="#game-overview-2" class="project-card">
+            <a href="#Interpressure" class="project-card">
                 <div class="project-image" style="background-image: url('Images/Interpressure/Icon.png');"></div>
                 <div class="project-content">
                     <h2 class="project-title" data-key="project2Title">Interpressure</h2>
@@ -133,7 +134,7 @@
     </main>
 
 
-    <section id="game-overview-1" class="game-summary">
+    <section id="SpaceRog" class="game-summary">
         <div class="profile-container">
             <img src="Images/SpaceRog/SpaceRog.png" alt="Space Rog" class="profile-img">
             <div class="profile-text">
@@ -160,21 +161,22 @@
         </div>
         
         <div class="game-preview">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wJO_vIDZn-I?rel=0&showinfo=0&modestbranding=1&controls=1&fs=1&autohide=1&iv_load_policy=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wJO_vIDZn-I" allowfullscreen></iframe>
+
         </div>
         
         
         <div class="screenshots">
-            <img src="Images/SpaceRog/1.png" alt="Скриншот гри 1" class="screenshot">
-            <img src="Images/SpaceRog/2.png" alt="Скриншот гри 2" class="screenshot">
-            <img src="Images/SpaceRog/3.png" alt="Скриншот гри 3" class="screenshot">
-            <img src="Images/SpaceRog/4.png" alt="Скриншот гри 4" class="screenshot">
-            <img src="Images/SpaceRog/5.png" alt="Скриншот гри 5" class="screenshot">
-            <img src="Images/SpaceRog/6.png" alt="Скриншот гри 6" class="screenshot">
+            <img src="Images/SpaceRog/1.png" alt="Скриншот гри 1" class="screenshot"  onclick="openImageModal(this)">
+            <img src="Images/SpaceRog/2.png" alt="Скриншот гри 2" class="screenshot"  onclick="openImageModal(this)">
+            <img src="Images/SpaceRog/3.png" alt="Скриншот гри 3" class="screenshot"  onclick="openImageModal(this)">
+            <img src="Images/SpaceRog/4.png" alt="Скриншот гри 4" class="screenshot"  onclick="openImageModal(this)">
+            <img src="Images/SpaceRog/5.png" alt="Скриншот гри 5" class="screenshot"  onclick="openImageModal(this)">
+            <img src="Images/SpaceRog/6.png" alt="Скриншот гри 6" class="screenshot"  onclick="openImageModal(this)">
         </div>
     </section>
     
-    <section id="game-overview-2" class="game-summary">
+    <section id="Interpressure" class="game-summary">
         <div class="profile-container">
             <img src="Images/Interpressure/Icon.png" alt="Space Rog" class="profile-img">
             <div class="profile-text">
@@ -198,15 +200,19 @@
         </div>
         
         <div class="game-preview">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wJO_vIDZn-I?rel=0&showinfo=0&modestbranding=1&controls=1&fs=1&autohide=1&iv_load_policy=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wJO_vIDZn-I" allowfullscreen></iframe>
+
         </div>
 
         <div class="screenshots">
-            <img src="Images/Interpressure/1.png" alt="Скриншот гри 1" class="screenshot">
-            <img src="Images/Interpressure/2.png" alt="Скриншот гри 2" class="screenshot">
-            <img src="Images/Interpressure/3.png" alt="Скриншот гри 3" class="screenshot">
-            <img src="Images/Interpressure/4.png" alt="Скриншот гри 4" class="screenshot">
-            <img src="Images/Interpressure/5.png" alt="Скриншот гри 5" class="screenshot">
+            <<div class="screenshots">
+                <img src="Images/Interpressure/1.png" alt="Скриншот гри 1" class="screenshot" onclick="openImageModal(this)">
+                <img src="Images/Interpressure/2.png" alt="Скриншот гри 2" class="screenshot" onclick="openImageModal(this)">
+                <img src="Images/Interpressure/3.png" alt="Скриншот гри 3" class="screenshot" onclick="openImageModal(this)">
+                <img src="Images/Interpressure/4.png" alt="Скриншот гри 4" class="screenshot" onclick="openImageModal(this)">
+                <img src="Images/Interpressure/5.png" alt="Скриншот гри 5" class="screenshot" onclick="openImageModal(this)">
+            </div>
+            
         </div>
     </section>
     
@@ -221,10 +227,11 @@
     
 
 
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
+<!-- Модальне вікно -->
+<div id="imageModal" class="modal" onclick="closeModal(event)">
+    <img class="modal-content" id="modalImage" onclick="closeModalI()"> <!-- Зображення, при кліку на яке закривається модальне вікно -->
+</div>
+
 
     <!-- Футер -->
     <footer>

@@ -51,96 +51,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Обробка подій для збільшення та зменшення зображень
-document.querySelectorAll('.game-image').forEach(image => {
-  image.addEventListener('click', (e) => {
-    const clickedImage = e.target;
-    toggleImageSize(clickedImage);
-  });
 
-  // Змінюємо розмір зображення за допомогою колеса миші
-  image.addEventListener('wheel', (e) => {
-    if (image.classList.contains('expanded')) {
-      const scale = e.deltaY > 0 ? 0.9 : 1.1;
-      const currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
-      image.style.transform = `scale(${currentScale * scale})`;
-    }
-  });
-});
 
-// Функція для зміни розміру зображення
-const toggleImageSize = (image) => {
-  if (image.classList.contains('expanded')) {
-    image.classList.remove('expanded');
-    image.style.transform = 'scale(1)';
-  } else {
-    image.classList.add('expanded');
-    image.style.transform = 'scale(1.9)';
-  }
-};
 
-// Модальне вікно для зображень
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
-const captionText = document.getElementById("modalCaption");
 
-// Відкриття модального вікна
-const openModal = (img) => {
-  modal.style.display = "block";
-  modalImg.src = img.src;
-  captionText.innerHTML = img.alt;
-};
 
-// Закриття модального вікна
-const closeModal = () => {
-  modal.style.display = "none";
-};
-
-// Додаємо події для картинок для відкриття модального вікна
-document.querySelectorAll(".game-image").forEach(image => {
-  image.onclick = () => openModal(image);
-});
-
-// Закриття модального вікна при натисканні на фон
-window.onclick = (event) => {
-  if (event.target === modal) closeModal();
-};
-// Додаємо обробник події на всі картки проектів
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', function(event) {
-      event.preventDefault(); // Запобігаємо стандартному переходу по посиланню
-      
-      // Отримуємо ID секції з атрибута href
-      const targetId = card.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      
-      // Плавно прокручуємо до цієї секції
-      window.scrollTo({
-          top: targetSection.offsetTop,
-          behavior: 'smooth' // Плавна прокрутка
-      });
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
+// Функція для відкриття модального вікна
+function openImageModal(imgElement) {
   const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const closeBtn = document.querySelector(".close");
+  const modalImage = document.getElementById("modalImage");
+  modal.style.display = "block";  // Показуємо модальне вікно
+  modalImage.src = imgElement.src;  // Встановлюємо джерело зображення в модальному вікні
+}
+// Закриття модального вікна при натисканні на зображення
+document.getElementById("modalImage").onclick = function() {
+  closeModalI();
+}
+// Функція для закриття модального вікна
+function closeModalI() {
+  const modal = document.getElementById("imageModal");
+  modal.style.display = "none";  // Приховуємо модальне вікно
+}
+// Функція для закриття модального вікна
+function closeModal(event) {
+  // Перевіряємо, чи був клік по самому модальному вікну, а не по зображенню або кнопці
+  if (event.target == event.currentTarget) {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none";  // Приховуємо модальне вікно
+  }
+}
 
-  document.querySelectorAll(".screenshot").forEach(img => {
-      img.addEventListener("click", function () {
-          modal.style.display = "flex"; // Показати модальне вікно
-          modalImg.src = this.src; // Встановити джерело зображення
-      });
-  });
-
-  closeBtn.addEventListener("click", function () {
-      modal.style.display = "none"; // Приховати модальне вікно
-  });
-
-  // Закриття модального вікна при натисканні поза зображенням
-  modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
-  });
-});
+// Закриття модального вікна при натисканні на будь-яке місце за межами зображення
+window.onclick = function(event) {
+  const modal = document.getElementById("imageModal");
+  if (event.target == modal) {
+    closeModal(event);
+  }
+}
