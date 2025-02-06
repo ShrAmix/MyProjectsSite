@@ -1,5 +1,5 @@
 {
-    "heroTitle": "Chekaliuk Dmitro / Developer",
+    "heroTitle": "Chekaliuk Dmitro",
     "heroDescription": "Exciting game projects made with Unity. Check them out below!",
     "homeLink": "About me",
     "projectsLink": "Projects",
@@ -35,7 +35,18 @@
     "aboutMe5": "Programming gives me great satisfaction. I aim to create not only technical solutions but also mechanics that are interesting and emotionally enriching. It is important for me that the code is not only effective but also clear, engaging, and enjoyable for users.",
     "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books.",
     
-    "g1text":"For many years, humanity has been sending signals into space, hoping to find other life forms. And he succeeded, but unfortunately, the aliens were not in the mood for friendly relations. Take the role of the first pilot of Space Rog and help the planet not to die out."
+    "g1text":"For many years, humanity has been sending signals into space, hoping to find other life forms. And he succeeded, but unfortunately, the aliens were not in the mood for friendly relations. Take the role of the first pilot of Space Rog and help the planet not to die out.",
     
+
+    "teg1": "Character Progression",
+    "teg2": "Difficulty Levels",
+    "teg3": "Daily Quests",
+    "teg4": "Quests",
+    "teg5": "Progress",
+    "teg6": "Varied Enemies",
+    "teg7": "Advertising",
+    "teg8": "Endless Mode"
+
+
 }
   

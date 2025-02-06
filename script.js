@@ -1,93 +1,107 @@
-// Отримуємо поточну мову з localStorage або встановлюємо за замовчуванням 'uk' (якщо мова не була збережена)
+// Отримуємо поточну мову з localStorage або встановлюємо за замовчуванням 'uk'
 let currentLanguage = localStorage.getItem('language') || 'uk'; 
-// Змінна для зберігання даних мови (тексти для перекладу)
+
+// Змінна для зберігання даних мови
 let languageData = {};
 
-// Функція для завантаження мови з JSON-файлу
+// Завантаження мови з JSON-файлу
 const loadLanguage = (language) => {
-  // Виконуємо запит для отримання відповідного JSON-файлу для вибраної мови
   fetch(`${language}.json`)
-    .then(response => response.json())  // Парсимо отриману відповідь як JSON
+    .then(response => response.json())
     .then(data => {
-      languageData = data;  // Зберігаємо отримані дані у змінну languageData
+      languageData = data;  // Зберігаємо дані мови
       updateTextContent();  // Оновлюємо текст на сторінці
     })
-    .catch(error => console.error('Error loading language file:', error));  // Якщо виникла помилка під час завантаження файлу
+    .catch(error => console.error('Error loading language file:', error));
 };
 
-// Функція для оновлення тексту на сторінці для всіх елементів з атрибутом data-key
+// Оновлення тексту на сторінці для елементів з атрибутом data-key
 const updateTextContent = () => {
-  // Отримуємо всі елементи, які мають атрибут 'data-key'
-  const elementsToTranslate = document.querySelectorAll('[data-key]');
-  
-  // Для кожного елемента з атрибутом 'data-key'
-  elementsToTranslate.forEach(element => {
-    const key = element.getAttribute('data-key');  // Отримуємо ключ з атрибута data-key
-    // Якщо в даних для поточної мови є відповідний текст по цьому ключу
+  document.querySelectorAll('[data-key]').forEach(element => {
+    const key = element.getAttribute('data-key');
     if (languageData[key]) {
-      element.textContent = languageData[key];  // Оновлюємо текст елемента
+      element.textContent = languageData[key];
     }
   });
 };
 
-// Завантажуємо мову за замовчуванням або з localStorage, якщо користувач вже вибрав мову раніше
+// Завантажуємо мову за замовчуванням або з localStorage
 loadLanguage(currentLanguage);
 
-// Подія для кнопки "UA" (для української мови)
-document.getElementById('ukrainian').addEventListener('click', () => {
-  currentLanguage = 'uk';  // Встановлюємо українську мову
-  localStorage.setItem('language', currentLanguage);  // Зберігаємо вибір мови в localStorage
-  loadLanguage(currentLanguage);  // Завантажуємо українську мову
-});
+// Обробка подій для кнопок зміни мови
+document.getElementById('ukrainian').addEventListener('click', () => changeLanguage('uk'));
+document.getElementById('english').addEventListener('click', () => changeLanguage('en'));
 
-// Подія для кнопки "EN" (для англійської мови)
-document.getElementById('english').addEventListener('click', () => {
-  currentLanguage = 'en';  // Встановлюємо англійську мову
-  localStorage.setItem('language', currentLanguage);  // Зберігаємо вибір мови в localStorage
-  loadLanguage(currentLanguage);  // Завантажуємо англійську мову
-});
+// Зміна мови
+const changeLanguage = (language) => {
+  currentLanguage = language;
+  localStorage.setItem('language', currentLanguage);
+  loadLanguage(currentLanguage);
+};
 
-// Подія для кнопки "Дізнатися більше" (натискання на кнопку)
-document.getElementById("myButton").addEventListener("click", function() {
-    alert("Скоро буде більше інформації!");  // Виводимо повідомлення при натисканні
-});
+// Подія для кнопки "Дізнатися більше"
+document.getElementById("myButton").addEventListener("click", () => alert("Скоро буде більше інформації!"));
 
-// Подія для плавного прокручування по сторінці при натисканні на посилання
+// Плавне прокручування до секцій на сторінці
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();  // Блокуємо стандартну поведінку браузера (перехід за посиланням)
-
-        const targetId = this.getAttribute('href').substring(1);  // Отримуємо ID елемента, на який потрібно прокрутити
-        const targetElement = document.getElementById(targetId);  // Знаходимо елемент на сторінці
-
-        targetElement.scrollIntoView({
-            behavior: 'smooth'  // Прокручуємо плавно до цього елемента
-        });
-    });
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = anchor.getAttribute('href').substring(1);
+    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+  });
 });
 
+// Обробка подій для збільшення та зменшення зображень
 document.querySelectorAll('.game-image').forEach(image => {
   image.addEventListener('click', (e) => {
-      const clickedImage = e.target;
-
-      // Якщо зображення вже розгорнуте, повертаємо його до початкового розміру
-      if (clickedImage.classList.contains('expanded')) {
-          clickedImage.classList.remove('expanded');
-          clickedImage.style.transform = 'scale(1)';  // Повертаємо до початкового стану
-      } else {
-          // Якщо зображення не розгорнуте, додаємо клас для розгортання
-          clickedImage.classList.add('expanded');
-          clickedImage.style.transform = 'scale(1.9)';  // Збільшуємо зображення
-      }
+    const clickedImage = e.target;
+    toggleImageSize(clickedImage);
   });
 
   // Змінюємо розмір зображення за допомогою колеса миші
   image.addEventListener('wheel', (e) => {
-      if (image.classList.contains('expanded')) {
-          const scale = e.deltaY > 0 ? 0.9 : 1.1;  // Якщо колесо прокручується вниз - зменшуємо, вгору - збільшуємо
-          const currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
-          const newScale = currentScale * scale;
-          image.style.transform = `scale(${newScale})`;
-      }
+    if (image.classList.contains('expanded')) {
+      const scale = e.deltaY > 0 ? 0.9 : 1.1;
+      const currentScale = parseFloat(image.style.transform.replace('scale(', '').replace(')', '')) || 1;
+      image.style.transform = `scale(${currentScale * scale})`;
+    }
   });
 });
+
+// Функція для зміни розміру зображення
+const toggleImageSize = (image) => {
+  if (image.classList.contains('expanded')) {
+    image.classList.remove('expanded');
+    image.style.transform = 'scale(1)';
+  } else {
+    image.classList.add('expanded');
+    image.style.transform = 'scale(1.9)';
+  }
+};
+
+// Модальне вікно для зображень
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const captionText = document.getElementById("modalCaption");
+
+// Відкриття модального вікна
+const openModal = (img) => {
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  captionText.innerHTML = img.alt;
+};
+
+// Закриття модального вікна
+const closeModal = () => {
+  modal.style.display = "none";
+};
+
+// Додаємо події для картинок для відкриття модального вікна
+document.querySelectorAll(".game-image").forEach(image => {
+  image.onclick = () => openModal(image);
+});
+
+// Закриття модального вікна при натисканні на фон
+window.onclick = (event) => {
+  if (event.target === modal) closeModal();
+};

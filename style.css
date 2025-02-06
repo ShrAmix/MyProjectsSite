@@ -1,25 +1,14 @@
-/* Глобальні змінні */
-:root {
-    --primary-color: #4db8ff;
-    --secondary-color: #00ffcc;
-    --bg-dark: #0d0d0d;
-    --bg-light-dark: #1a1a1a;
-    --text-light: #ffffff;
-    --text-muted: #e0e0e0;
-    --shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
 /* Глобальні стилі */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: #0d0d0d; /* Темний фон */
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -28,40 +17,58 @@ body {
 /* Хедер */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Вирівнює елементи зліва і справа */
     align-items: center;
     padding: 15px 50px;
-    background: linear-gradient(90deg, #1a1a1a, #2a2a2a, #3a3a3a, #444444);
-    box-shadow: var(--shadow);
+    background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 33%, #353535 66%, #222222 100%);
+
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
+
+header.show {
+    transform: translateY(0); /* Показуємо хедер */
+}
+
+
+
+
 
 /* Логотип */
 .logo {
     font-size: 28px;
     font-weight: bold;
-    color: var(--primary-color);
-    text-transform: uppercase;
+    color: #4db8ff;
     letter-spacing: 2px;
-    margin-right: 30px;
+    margin-right: 30px; /* Додаємо відступ справа, щоб лого і навігація не злипались */
 }
+h3[data-key="heroTitle"] {
+    margin-bottom: 5px; /* Відступ тільки після h3 */
+    font-size: 28px; /* Розмір шрифта для h3 */
+}
+
 
 /* Навігація */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 15px; /* Відступ між елементами списку */
 }
 
+/* Стиль для посилань навігації */
 nav ul li a {
-    color: var(--text-light);
+    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: #4db8ff;
 }
+
+
 
 /* Головний контент */
 main {
@@ -74,28 +81,29 @@ main {
     padding: 40px 20px;
 }
 
-/* Контейнер для секцій */
+
 .content-container {
     display: flex;
-    flex-direction: row; /* За замовчуванням блоки в ряд */
-    justify-content: space-between;
-    gap: 30px; /* Відстань між блоками */
+    gap: 20px; /* Відступ між секціями */
+    justify-content: space-between; /* Вирівнює секції по боках */
+    
 }
 
 /* Секція "Про мене" */
 .hero {
-    width: 70%;
+    width: 70%; /* Встановлюємо ширину першої секції */
     padding: 40px;
-    background-color: var(--bg-light-dark);
+    background-color: #1a1a1a;
     border-radius: 10px;
-    box-shadow: var(--shadow);
-    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: left; /* Текст вирівняний по лівому краю */
 }
 
 .hero h1 {
     font-size: 36px;
     text-transform: uppercase;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, #4db8ff, #00ffcc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
@@ -104,16 +112,33 @@ main {
 .hero p {
     font-size: 18px;
     line-height: 1.6;
-    color: var(--text-muted);
+    opacity: 0.9;
     margin-bottom: 20px;
+    color: #e0e0e0;
 }
+
+.hero p:last-child {
+    margin-bottom: 0;
+}
+
+.hero a {
+    color: #4db8ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.hero a:hover {
+    color: #00ffcc;
+}
+
 
 /* Кнопка */
 button {
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 14px 28px;
     font-size: 18px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, #196ea7, #0d4a66);
     color: #121212;
     border: none;
     cursor: pointer;
@@ -126,8 +151,9 @@ button:hover {
     background: linear-gradient(90deg, #3aa7e0, #00cc99);
 }
 
-/* Карточки проєктів */
+/* Секція проєктів */
 .projects {
+    width: 100%;
     max-width: 1200px;
     margin: 40px auto;
     display: flex;
@@ -141,15 +167,16 @@ button:hover {
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
-    text-decoration: none;
+    text-decoration: none; /* Прибирає підкреслення для посилання */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавний перехід для анімації */
 }
 
 .project-card:hover {
     transform: scale(1.05);
-    background: rgba(77, 184, 255, 0.1); /* Легке підсвічування */
-    box-shadow: 0 0 15px rgba(77, 184, 255, 0.7); /* Синє світіння */
+    text-decoration: none;
+    /* Світіння на краях */
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.8); /* Синє світіння */
 }
 
 
@@ -166,47 +193,52 @@ button:hover {
 
 .project-title {
     font-size: 20px;
-    color: var(--primary-color);
+    color: #4db8ff;
 }
 
 .project-description {
     font-size: 14px;
-    color: #948e8e;
+    opacity: 0.8;
+    margin-top: 5px;
+    color: #948e8e; /* Ваш власний колір тексту */
 }
 
 /* Блоки з мовами */
 .project-languages {
     margin-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Центруємо блоки по горизонталі */
     gap: 10px;
     flex-wrap: wrap;
 }
 
 .language-tag {
     background-color: #292929;
-    color: var(--text-light);
+    color: #fff;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 20px; /* Закруглені кути */
     font-size: 14px;
+    opacity: 0.8;
     transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .language-tag:hover {
-    background-color: var(--primary-color);
+    background-color: #4db8ff;
     opacity: 1;
 }
 
 /* Перемикач мови */
+/* Перемикач мови */
 .language-switcher {
     display: flex;
-    gap: 10px;
+    gap: 10px; /* Відступ між кнопками */
 }
 
+/* Кнопки перемикача мови */
 .language-switcher button {
     padding: 8px 16px;
     background-color: #292929;
-    color: var(--text-light);
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -214,110 +246,75 @@ button:hover {
 }
 
 .language-switcher button:hover {
-    background-color: var(--primary-color);
+    background-color: #4db8ff;
 }
-
-/* Контакти */
+/* Контейнер для двох секцій */
 .contacts {
-    width: 30%;
+    width: 30%; /* Ширина секції */
     padding: 40px;
+    background: #1b343b; /* Примусово застосуємо темний фон */
+    border-radius: 10px; /* Закруглені кути */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Легке затемнення для обрамлення */
+    color: #fff;
+    text-align: center; /* Центрування тексту */
+    overflow: hidden; /* Забезпечує, що всі елементи залишатимуться в межах */
 }
-
+/* Фото в секції контактів */
 .contacts img {
     width: 250px;
     height: 250px;
-    border-radius: 50%;
-    margin: 20px 0;
-    object-fit: cover;
+    border-radius: 50%; /* Кругле фото */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    object-fit: cover; /* Забезпечує, що зображення буде покривати область */
 }
 
+/* Кнопки для контактів */
 .contacts a {
-    color: var(--primary-color);
+    color: #4db8ff;
     text-decoration: none;
+
+}
+.contacts h3 {
+    font-size: 30px; /* Збільшений розмір шрифта для заголовка */
+    font-weight: bold; /* Товстий шрифт для заголовка */
+    margin-bottom: 15px; /* Відступ знизу */
+    color: #0091f1;
+    
+}
+.contacts p {
+    font-size: 20px;
+    margin-bottom: 0px; /* Відступи між абзацами */
+    line-height: 1.5;
 }
 
 .contacts a:hover {
     text-decoration: underline;
+    text-decoration: none; /* Без підкреслення */
 }
 
-/* Деталі гри */
-.game-details {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: var(--bg-light-dark);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    text-align: center;
+/* Загальні стилі для контактних посилань */
+.contacts .contact-link {
+    color: #ffffff; /* Колір успадковується від батьківського елемента */
+    text-decoration: none; /* Без підкреслення */
+    font-weight: bold; /* Жирний текст */
+    transition: color 0.3s; /* Плавний перехід кольору */
 }
 
-.game-details {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
+/* Стиль для посилань при наведенні */
+.contacts .contact-link:hover {
+    color: #0091f1; /* Колір при наведенні */
 }
 
-.game-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
+/* Стиль для посилання при натисканні */
+.contacts .contact-link:active {
+    color: #4db8ff; /* Колір при натисканні */
 }
-
-.game-description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.game-trailer {
-    margin: 20px 0;
-}
-
-.game-trailer iframe {
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    border-radius: 10px;
-}
-
-.game-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.game-image {
-    height: 200px;
-    width: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer; /* Додаємо курсор "вказівник", щоб показати, що зображення клікабельне */
-    transition: transform 0.3s ease; /* Анімація для плавного збільшення */
-}
-
-/* Розширене зображення */
-.game-image.expanded {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: scale(1.9);
-    z-index: 1000; /* Для того, щоб зображення знаходилось поверх всіх інших елементів */
-    cursor: zoom-out; /* Курсор для зменшення */
-    transition: transform 0.3s ease;
-}
-
-
-
-.game-image:hover {
-    transform: scale(1.05);
-}
-
 
 
 /* Футер */
 footer {
-    background-color: var(--bg-light-dark);
+    background-color: #1a1a1a;
     text-align: center;
     padding: 15px;
     font-size: 14px;

@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чекалюк Дмитро / Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DmitroDev</title>
+    <!-- Підключення основного стилю -->
+<link rel="stylesheet" href="style.css">
+<!-- Підключення стилів для конкретного блоку (Game Details) -->
+<link rel="stylesheet" href="styleProject.css">
 </head>
 <body>
 
     <header>
         <nav> 
-        <div class="logo" data-key="logo"><class="heroTitle" data-key="heroTitle">My Projects</class></div>
+            <div class="logo" data-key="logo">
+                <h1 class="heroTitle" >DmitroDev</h1>
+            </div>
+            
         </nav>
+        
         <!-- Перемикач мов -->
         <div class="language-switcher">
             <button id="ukrainian" data-key="uk">UA</button>
@@ -25,24 +32,29 @@
         <div class="content-container">
             <section id="home" class="hero">
                 <h1 class="hero-title" data-key="homeLink">Мої Unity Ігри</h1>
-                <p class="aboutMe1" data-key="aboutMe1">AboutMe</p>
-                <p class="aboutMe2" data-key="aboutMe2">AboutMe</p>
-                <p class="aboutMe3" data-key="aboutMe3">AboutMe</p>
-                <p class="aboutMe4" data-key="aboutMe4">AboutMe</p>
-                <p class="aboutMe5" data-key="aboutMe5">AboutMe</p>
-                <p class="aboutMe6" data-key="aboutMe6">AboutMe</p>
+                <p class="aboutMe1" data-key="aboutMe1">Мене звати Дмитро Чекалюк, я програміст з досвідом роботи в розробці ігор, сайтів та додатків. Моя основна спеціалізація — розробка на Unity та програмування на C#, а також я працюю з Python, HTML, CSS і JavaScript.</p>
+                <p class="aboutMe2" data-key="aboutMe2">Я почав програмувати на Unity в червні 2022 року, і з того часу створив кілька цікавих ігор. З жовтня 2023 року я також працюю з Python, а з вересня 2024 року почав програмувати сайти та додатки на HTML, CSS та JavaScript. Це дає мені можливість працювати як над ігровими проєктами, так і над веб-розробкою, що розширює мої можливості та навички.</p>
+                <p class="aboutMe3" data-key="aboutMe3">Наразі я навчаюся на бакалавра за спеціальністю Інженерія програмного забезпечення у Вінницькому Національному Технічному Університеті. Моя мета — стати висококваліфікованим програмістом і спеціалістом з розробки ігор, при цьому постійно покращуючи свої навички у створенні мультиплеєрних ігор на Unity.</p>
+                <p class="aboutMe4" data-key="aboutMe4">Одним з найбільш цікавих моментів у моїй кар'єрі було моє участь у Game Jam на початку 2025 року. Я вступив у команду з 10 осіб і став її лідером. Моя роль полягала в управлінні розробкою гри, я був основним програмістом, а також Game Designer і консультантом по кодуванню для інших учасників команди.</p>
+                <p class="aboutMe5" data-key="aboutMe5">Програмування приносить мені велике задоволення. Я прагну створювати не тільки технічні рішення, а й механіки, що є цікавими і емоційно збагачують. Мені важливо, щоб код був не тільки ефективним, але й зрозумілим, цікавим і приносив радість користувачам.</p>
+                <p class="aboutMe6" data-key="aboutMe6">Окрім програмування, мої захоплення включають ігри, гру на гітарі, прогулянки, складання пісень і читання книг.</p>
             </section>
             
             <section id="contacts" class="contacts">
                 <h2 data-key="contactHeading">Контакти</h2>
-                <img src="Images/photo.jpg" alt="Ваше фото" class="contact-photo">
-                <p><strong data-key="phoneLabel">Телефон:</strong> <a href="tel:+380632761594" class="contact-link" target="_blank">+380632761594</a></p>
-                <p><strong data-key="phoneLabel">Телефон:</strong> <a href="tel:+380996125823" class="contact-link" target="_blank">+380996125823</a></p>
-                <p><strong data-key="emailLabel">Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ifoxps@gmail.com&su=Тема" class="contact-link" target="_blank">ifoxps@gmail.com</a></p>
-                <p><strong data-key="telegramLabel">Telegram:</strong> <a href="tg://resolve?domain=ifoxps" class="contact-link" target="_blank">@ifoxps</a></p>
-                <p><a href="https://github.com/ShrAmix" target="_blank" class="contact-link">GitHub</a><strong>/</strong><a href="https://gitlab.com/ifoxps" target="_blank" class="contact-link">GitLab</a></p>
-                
+                <div class="contact-info">
+                    <img src="Images/photo.jpg" alt="Ваше фото" class="contact-photo">
+                    <div class="contact-details">
+                        <h3 data-key="heroTitle">Чекалюк Дмитро</h3>
+                        <p><strong data-key="phoneLabel">Телефон:</strong> <a href="tel:+380632761594" class="contact-link" target="_blank">+380632761594</a></p>
+                        <p><strong data-key="phoneLabel">Телефон:</strong> <a href="tel:+380996125823" class="contact-link" target="_blank">+380996125823</a></p>
+                        <p><strong data-key="emailLabel">Email:</strong> <a href="mailto:ifoxps@gmail.com" class="contact-link" target="_blank">ifoxps@gmail.com</a></p>
+                        <p><strong data-key="telegramLabel">Telegram:</strong> <a href="tg://resolve?domain=ifoxps" class="contact-link" target="_blank">@ifoxps</a></p>
+                        <p><a href="https://github.com/ShrAmix" target="_blank" class="contact-link">GitHub</a><strong>/</strong><a href="https://gitlab.com/ifoxps" target="_blank" class="contact-link">GitLab</a></p>
+                    </div>
+                </div>
             </section>
+            
         </div>
 
         <!-- Секція з проєктами -->
@@ -115,33 +127,57 @@
                 </div>
             </a>
         </section>
-    
-        <section id="game-details" class="game-details">
-            <h2 class="game-title" data-key="project1Title">Space Rog</h2>
-            <p class="game-description" data-key="g1text">Протягом багатьох років людство посилало сигнали в космос, сподіваючись знайти інші форми життя. І йому вдалося, але на привеликий жаль, прибульці не були налаштовані на дружні взаємовідносини. Візьміть роль першого пілота компанії Space Rog і допоможіть планеті не вимерти.</p>
-        
-        <!-- Трейлер гри з YouTube -->
-            <div class="game-trailer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        
-        <!-- Фотографії з гри -->
-                <div class="game-images">
-                <img src="Images/SpaceRog/1.png" alt="Скриншот гри 1" class="game-image" data-index="0">
-                <img src="Images/SpaceRog/2.png" alt="Скриншот гри 2" class="game-image" data-index="1">
-                <img src="Images/SpaceRog/3.png" alt="Скриншот гри 3" class="game-image" data-index="2">
-                <img src="Images/SpaceRog/4.png" alt="Скриншот гри 1" class="game-image" data-index="3">
-                <img src="Images/SpaceRog/5.png" alt="Скриншот гри 2" class="game-image" data-index="4">
-                <img src="Images/SpaceRog/6.png" alt="Скриншот гри 3" class="game-image" data-index="5">
-                <img src="Images/SpaceRog/1.png" alt="Скриншот гри 1" class="game-image" data-index="0">
-                <img src="Images/SpaceRog/2.png" alt="Скриншот гри 2" class="game-image" data-index="1">
-                <img src="Images/SpaceRog/3.png" alt="Скриншот гри 3" class="game-image" data-index="2">
-                <img src="Images/SpaceRog/4.png" alt="Скриншот гри 1" class="game-image" data-index="3">
-                <img src="Images/SpaceRog/5.png" alt="Скриншот гри 2" class="game-image" data-index="4">
-                <img src="Images/SpaceRog/6.png" alt="Скриншот гри 3" class="game-image" data-index="5">
-            </div>
-        </section>
     </main>
+
+
+
+    <section id="game-overview" class="game-summary">
+        <h2 class="game-name" data-key="project1Title">Space Rog</h2>
+        <p class="game-info" data-key="g1text">
+            <strong>Space Rog</strong> — це нескінченна космічна гра, розроблена на <strong>Unity</strong> з використанням <strong>C#</strong>. Гравець бере на себе роль дослідника, який вирушає у далеке космічне подорожування, проходячи через різні планети та зустрічаючи нових противників. Протягом гри користувач прокачує свого персонажа, виконуючи різноманітні квести та щоденні завдання.
+        </p>
+        
+        <div class="project-languages">
+            <span class="language-tag">C#</span>
+            <span class="language-tag">Unity</span>
+            <span class="language-tag" data-key="teg1">Прокачка персонажа</span>
+            <span class="language-tag" data-key="teg2">Нескінченний режим</span>
+            <span class="language-tag" data-key="teg3">Реклама</span>
+            <span class="language-tag" data-key="teg4">Різноманітні противники</span>
+            <span class="language-tag" data-key="teg5">Прогрес</span>
+            <span class="language-tag" data-key="teg6">Квести</span>
+            <span class="language-tag" data-key="teg7">Щоденні квести</span>
+            <span class="language-tag" data-key="teg8">Рівні складності</span>
+        </div>
+        
+        <div class="game-preview">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wJO_vIDZn-I?rel=0&showinfo=0&modestbranding=1&controls=1&fs=1&autohide=1&iv_load_policy=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+            
+        
+        
+        
+        <div class="screenshots">
+            <img src="Images/SpaceRog/1.png" alt="Скриншот гри 1" class="screenshot">
+            <img src="Images/SpaceRog/2.png" alt="Скриншот гри 2" class="screenshot">
+            <img src="Images/SpaceRog/3.png" alt="Скриншот гри 3" class="screenshot">
+            <img src="Images/SpaceRog/4.png" alt="Скриншот гри 4" class="screenshot">
+            <img src="Images/SpaceRog/5.png" alt="Скриншот гри 5" class="screenshot">
+            <img src="Images/SpaceRog/6.png" alt="Скриншот гри 6" class="screenshot">
+        </div>
+    </section>
+    
+    
+    
+    
+
+    
+    
+    
+   
+    
+    
+    
 
 
 
