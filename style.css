@@ -311,7 +311,51 @@ button:hover {
     color: #4db8ff; /* Колір при натисканні */
 }
 
+/* Медіа-запит для мобільних пристроїв */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Змінюємо напрямок на вертикальний */
+    }
 
+    .hero {
+        width: 100%; /* Ширина секції "Про мене" займає 100% */
+        padding: 20px; /* Зменшуємо відступи */
+    }
+
+    .contacts {
+        width: 100%; /* Ширина секції "Контакти" займає 100% */
+        padding: 20px; /* Зменшуємо відступи */
+        margin-bottom: 20px; /* Відступ між блоками */
+    }
+
+    /* Зменшуємо розмір фото в мобільній версії */
+    .contacts img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Вирівнюємо заголовки по центру для мобільних */
+    .contacts h3, .hero h1 {
+        text-align: center;
+    }
+
+    /* Зменшуємо розміри шрифтів на мобільних пристроях */
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .contacts h3 {
+        font-size: 24px;
+    }
+
+    .contacts p {
+        font-size: 16px;
+    }
+}
 /* Футер */
 footer {
     background-color: #1a1a1a;
