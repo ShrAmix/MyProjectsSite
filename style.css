@@ -332,3 +332,114 @@ footer {
     font-size: 14px;
     opacity: 0.7;
 }
+/* Адаптація для мобільних пристроїв (максимальна ширина екрану 768px) */
+@media (max-width: 768px) {
+    /* Змінюємо напрямок контейнера для контенту на вертикальний */
+    .content-container {
+        flex-direction: column; /* Блоки в стовпчик */
+        align-items: center; /* Центруємо контент */
+        gap: 20px; /* Відстань між блоками */
+    }
+
+    /* Секція "Про мене" */
+    .hero {
+        width: 100%; /* Робимо секцію на всю ширину */
+        padding: 20px;
+        text-align: center; /* Текст по центру */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Зменшуємо розмір заголовка */
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 16px; /* Зменшуємо розмір тексту */
+    }
+
+    /* Карточки проєктів */
+    .projects {
+        max-width: 100%; /* Робимо проєкти на всю ширину */
+        display: flex;
+        flex-direction: column; /* Блоки один під одним */
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .project-card {
+        width: 100%; /* Картка займає всю ширину */
+        max-width: 100%; /* Максимальна ширина 100% */
+    }
+
+    .project-title {
+        font-size: 18px; /* Зменшуємо розмір заголовка */
+    }
+
+    .project-description {
+        font-size: 12px; /* Зменшуємо розмір опису */
+    }
+
+    /* Контакти */
+    .contacts {
+        width: 100%; /* Контакти займають всю ширину */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .contacts img {
+        width: 150px; /* Зменшуємо розмір фото */
+        height: 150px;
+        margin: 10px 0;
+    }
+
+    .contacts a {
+        font-size: 14px; /* Зменшуємо розмір тексту в контактах */
+    }
+
+    /* Стилі для мобільного розширеного зображення */
+    .game-image.expanded {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: scale(1.5); /* Зменшуємо масштаб */
+        z-index: 1000; /* Встановлюємо зображення поверх інших елементів */
+        cursor: zoom-out; /* Курсор для зменшення */
+    }
+
+    .game-trailer iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 200px; /* Зменшуємо висоту відео */
+    }
+
+    .game-images {
+        flex-direction: column; /* Всі зображення в стовпчик */
+        gap: 15px; /* Відстань між зображеннями */
+    }
+
+    .game-image {
+        width: 100%;
+        height: auto; /* Зображення займає 100% ширини */
+        object-fit: cover;
+    }
+
+    .game-title {
+        font-size: 1.5rem; /* Зменшуємо заголовок гри */
+    }
+
+    .game-description {
+        font-size: 1rem; /* Зменшуємо опис гри */
+    }
+
+    /* Адаптація футера */
+    footer {
+        font-size: 12px; /* Зменшуємо розмір тексту в футері */
+        padding: 10px;
+    }
+
+    /* Зменшення кнопок */
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
