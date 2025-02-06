@@ -77,10 +77,29 @@ main {
 /* Контейнер для секцій */
 .content-container {
     display: flex;
-    gap: 30px;
+    flex-direction: row; /* За замовчуванням блоки в ряд */
     justify-content: space-between;
+    gap: 30px; /* Відстань між блоками */
 }
+/* Для мобільних пристроїв */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Вертикальне розміщення */
+        align-items: center; /* Центруємо контент */
+        gap: 20px; /* Відстань між блоками */
+    }
+    
+    section {
+        width: 100%; /* Блоки займають всю ширину */
+    }
 
+    /* Адаптація для зображення */
+    .contact-photo {
+        width: 100%; /* Зображення займає всю ширину контейнера */
+        height: auto; /* Висота пропорційна ширині */
+        max-width: 400px; /* Максимальна ширина для зображення */
+    }
+}
 /* Секція "Про мене" */
 .hero {
     width: 70%;
