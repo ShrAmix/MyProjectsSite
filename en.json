@@ -36,6 +36,7 @@
     "aboutMe6": "Besides programming, my hobbies include gaming, playing the guitar, walking, composing songs, and reading books.",
     
     "g1text":"For many years, humanity has been sending signals into space, hoping to find other life forms. And he succeeded, but unfortunately, the aliens were not in the mood for friendly relations. Take the role of the first pilot of Space Rog and help the planet not to die out.",
+    "g2text":"Humanity nearly destroyed the Earth's atmosphere through greenhouse gas emissions, prompting the decision to leave the planet. However, constructing interstellar spaceships proved to be unacceptably expensive. As a result, a new and cost-effective technology called the 'bubble' was invented. You are part of the first group testing this innovative technology. Your task is to create the ideal city for living while managing the bubble's deformation to ensure it remains intact.",
     
 
     "teg1": "Character Progression",
@@ -45,7 +46,13 @@
     "teg5": "Progress",
     "teg6": "Varied Enemies",
     "teg7": "Advertising",
-    "teg8": "Endless Mode"
+    "teg8": "Endless Mode",
+    "teg9": "Bubble Deformation",
+"teg10": "Construction",
+"teg11": "Economy",
+"teg12": "Storyline",
+"teg13": "Tutorial"
+
 
 
 }

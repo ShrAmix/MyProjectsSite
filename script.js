@@ -105,3 +105,19 @@ document.querySelectorAll(".game-image").forEach(image => {
 window.onclick = (event) => {
   if (event.target === modal) closeModal();
 };
+// Додаємо обробник події на всі картки проектів
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', function(event) {
+      event.preventDefault(); // Запобігаємо стандартному переходу по посиланню
+      
+      // Отримуємо ID секції з атрибута href
+      const targetId = card.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      // Плавно прокручуємо до цієї секції
+      window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth' // Плавна прокрутка
+      });
+  });
+});
