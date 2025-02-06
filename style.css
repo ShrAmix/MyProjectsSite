@@ -190,12 +190,22 @@ button:hover {
     transition: transform 0.3s, box-shadow 0.3s; /* Плавний перехід для анімації */
 }
 
+/* Стилі для hover */
 .project-card:hover {
     transform: scale(1.05);
     text-decoration: none;
     /* Світіння на краях */
     box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.8); /* Синє світіння */
 }
+
+/* Медіа-запит для мобільних пристроїв, де hover не працює */
+@media (max-width: 768px) {
+    .project-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
 
 
 .project-image {
