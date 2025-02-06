@@ -21,12 +21,27 @@ header {
     align-items: center;
     padding: 15px 50px;
     background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 33%, #353535 66%, #222222 100%);
-
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Медіа-запит для мобільних пристроїв */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px; /* Зменшуємо відступи для мобільних пристроїв */
+        display: flex;
+        align-items: flex-start; /* Вирівнюємо елементи по лівому краю */
+        flex-wrap: wrap; /* Дозволяємо елементам "обгортатись" */
+    }
 
+    /* Якщо є текстові елементи в хедері, можна зменшити шрифт */
+    header h1, header h2, header p {
+        font-size: clamp(22px, 7vw, 32px); /* Шрифт адаптується в залежності від ширини екрану */
+        word-wrap: break-word; /* Переносимо слова, щоб вони не вилазили за межі */
+        white-space: normal; /* Дозволяємо тексту переноситись на новий рядок */
+    }
+}
+
+/* Показ хедера */
 header.show {
     transform: translateY(0); /* Показуємо хедер */
 }
@@ -247,6 +262,17 @@ button:hover {
 
 .language-switcher button:hover {
     background-color: #4db8ff;
+}
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .language-switcher {
+        gap: 4px; /* Зменшуємо відстань між кнопками на мобільних пристроях */
+    }
+
+    .language-switcher button {
+        padding: 6px 12px; /* Зменшуємо відступи */
+        font-size: clamp(10px, 4vw, 14px); /* Зменшуємо розмір шрифта */
+    }
 }
 /* Контейнер для двох секцій */
 .contacts {
