@@ -56,27 +56,11 @@
     transition: transform 0.3s ease; /* Плавне збільшення */
 }
 
-/* Клас для розширених зображень */
-.screenshot.expanded {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: scale(1.9);
-    z-index: 1000;
-    cursor: zoom-out;
-    transition: transform 0.3s ease;
-}
-
-/* Ефект при наведенні на зображення */
-.screenshot:hover {
-    transform: scale(1.05);
-}
-
 /* Адаптивність для мобільних пристроїв */
 @media (max-width: 768px) {
     .game-summary {
-        padding: 20px;
-        margin: 20px;
+        padding: 10px;  /* Зменшено відступи */
+        margin: 10px;    /* Зменшено відступи */
     }
 
     .game-name {
@@ -93,19 +77,24 @@
     }
 
     .screenshots {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;  /* Зменшена відстань між зображеннями */
     }
 
     .screenshot {
-        height: 150px;
-        margin-bottom: 10px;
+        height: 100px; /* Зменшений розмір для мобільних пристроїв */
+        width: auto;
+        max-width: 100%; /* Забезпечує адаптивність */
     }
 
     .tech-tag {
         font-size: 0.8rem;
     }
 }
+
+
+
 /* Контейнер для профілю */
 .profile-container {
     display: flex; /* Використовуємо flexbox для вирівнювання */
