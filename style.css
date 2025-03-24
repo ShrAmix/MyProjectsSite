@@ -302,7 +302,7 @@ button:hover {
 /* Фото в секції контактів */
 .contacts img {
     width: 250px;
-    height: 250px;
+    height: 300px;
     border-radius: 50%; /* Кругле фото */
     margin-bottom: 20px;
     margin-top: 20px;
